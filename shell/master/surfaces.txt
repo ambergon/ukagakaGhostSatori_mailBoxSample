@@ -1,0 +1,871 @@
+charset,UTF-8
+
+descript
+{
+    version,1
+    maxwidth,500
+}
+
+
+sakura.surface.alias 
+{
+	ふつう,[0]
+	微笑む,[1]
+	叱る,[2]
+	かなしい,[3]
+	楽しい,[4]
+	困っちゃう,[5]
+	きょとん,[6]
+	不安,[7]
+	びっくり,[8]
+	悩む,[9]
+
+	ぽかーん,[11]
+	むっ…,[12]
+	ぺろん,[13]
+	そらす,[14]
+	微笑む/そらす,[15]
+	すねる/そらす,[16]
+	かなしい/そらす,[17]
+	にやり/そらす,[18]
+
+	ふつう/テレ,[100]
+	微笑む/テレ,[101]
+	叱る/テレ,[102]
+	かなしい/テレ,[103]
+	楽しい/テレ,[104]
+	困っちゃう/テレ,[105]
+	きょとん/テレ,[106]
+	不安/テレ,[107]
+	びっくり/テレ,[108]
+	悩ましい/テレ,[109]
+
+	ぽかーん/テレ,[111]
+	むっ…/テレ,[112]
+	ぺろん/テレ,[113]
+	そらす/テレ,[114]
+	微笑む/そらす/テレ,[115]
+	すねる/そらす/テレ,[116]
+	かなしい/そらす/テレ,[117]
+	にやり/そらす/テレ,[118]
+
+}
+
+
+//ふつう
+surface0
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5000.png,0,0
+    element2,overlay,surface7000.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//微笑む
+surface1
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5003.png,0,0
+    element2,overlay,surface7001.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//叱る
+surface2
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5000.png,0,0
+    element2,overlay,surface7002.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//かなしい
+surface3
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5000.png,0,0
+    element2,overlay,surface7008.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6001,0,0,0
+}
+
+
+//楽しい
+surface4
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5000.png,0,0
+    element2,overlay,surface7004.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//困っちゃう
+surface5
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5001.png,0,0
+    element2,overlay,surface7002.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5007,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5007,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6005,0,0,0
+}
+
+
+//きょとん
+surface6
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5000.png,0,0
+    element2,overlay,surface7008.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//不安
+surface7
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5001.png,0,0
+    element2,overlay,surface7003.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5007,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5007,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6001,0,0,0
+}
+
+
+//びっくり
+surface8
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5006.png,0,0
+    element2,overlay,surface7007.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//悩む
+surface9
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5002.png,0,0
+    element2,overlay,surface7002.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6004,0,0,0
+}
+
+
+surface10
+{
+    element0,overlay,surface10.png,0,0
+}
+
+
+//ぽかーん
+surface11
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5006.png,0,0
+    element2,overlay,surface7006.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5001,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5001,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//むっ…
+surface12
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5001.png,0,0
+    element2,overlay,surface7003.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5007,0-700,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5007,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//ぺろん
+surface13
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5003.png,0,0
+    element2,overlay,surface7010.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす
+surface14
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5008.png,0,0
+    element2,overlay,surface7000.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5010,0-710,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5010,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす/微笑む
+surface15
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5009.png,0,0
+    element2,overlay,surface7001.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5010,0-710,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5010,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす/すねる
+surface16
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5009.png,0,0
+    element2,overlay,surface7003.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5010,0-710,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5010,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//そらす/かなしい
+surface17
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5009.png,0,0
+    element2,overlay,surface7006.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5010,0-710,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5010,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6005,0,0,0
+}
+
+
+//にやり
+surface18
+{
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5009.png,0,0
+    element2,overlay,surface7009.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5010,0-710,0,0
+    animation0.pattern1,overlay,5002,100,0,0
+    animation0.pattern2,overlay,5010,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//------------------------------------------------------赤面
+//ふつう
+surface100
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5100.png,0,0
+    element2,overlay,surface7100.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//微笑む
+surface101
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5103.png,0,0
+    element2,overlay,surface7101.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//叱る
+surface102
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5100.png,0,0
+    element2,overlay,surface7102.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//かなしい
+surface103
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5100.png,0,0
+    element2,overlay,surface7108.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6001,0,0,0
+}
+
+
+//楽しい
+surface104
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5100.png,0,0
+    element2,overlay,surface7104.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//困っちゃう
+surface105
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5101.png,0,0
+    element2,overlay,surface7102.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5107,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5107,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6005,0,0,0
+}
+
+
+//きょとん
+surface106
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5100.png,0,0
+    element2,overlay,surface7108.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//不安
+surface107
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5101.png,0,0
+    element2,overlay,surface7103.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5107,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5107,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6001,0,0,0
+}
+
+
+//びっくり
+surface108
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5106.png,0,0
+    element2,overlay,surface7107.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//悩む
+surface109
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5102.png,0,0
+    element2,overlay,surface7102.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6004,0,0,0
+}
+
+
+//ぽかーん
+surface111
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5106.png,0,0
+    element2,overlay,surface7106.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5101,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5101,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6003,0,0,0
+}
+
+
+//むっ…
+surface112
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5101.png,0,0
+    element2,overlay,surface7103.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5107,0-700,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5107,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//ぺろん
+surface113
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5103.png,0,0
+    element2,overlay,surface7110.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす
+surface114
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5108.png,0,0
+    element2,overlay,surface7100.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5110,0-710,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5110,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす/微笑む
+surface115
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5109.png,0,0
+    element2,overlay,surface7101.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5110,0-710,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5110,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//そらす/すねる
+surface116
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5109.png,0,0
+    element2,overlay,surface7103.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5110,0-710,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5110,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6002,0,0,0
+}
+
+
+//そらす/かなしい
+surface117
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5109.png,0,0
+    element2,overlay,surface7106.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5110,0-710,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5110,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6005,0,0,0
+}
+
+
+//にやり
+surface118
+{
+    element0,overlay,Body1.png,0,0
+    element1,overlay,surface5109.png,0,0
+    element2,overlay,surface7109.png,0,0
+
+    animation0.interval,periodic,4
+    animation0.pattern0,overlay,5110,0-710,0,0
+    animation0.pattern1,overlay,5102,100,0,0
+    animation0.pattern2,overlay,5110,100,0,0
+    animation0.pattern3,overlay,-1,100,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+}
+
+
+//------------------------------------------------------くちぱく設定
+//通常ボディ用の口パク
+surface.append0-9,11-18
+{
+    //くちぱく
+    animation1.interval,talk,1
+    animation1.pattern0,overlay,7005,0,0,0
+    animation1.pattern1,overlay,7000,150,0,0
+    animation1.pattern2,overlay,7008,150,0,0
+    animation1.pattern3,overlay,7000,150,0,0
+    animation1.pattern4,overlay,7006,150,0,0
+    animation1.pattern5,overlay,-1,150,0,0
+}
+
+
+//赤面時用の口パク
+surface.append100-118
+{
+    //くちぱく
+    animation1.interval,talk,1
+    animation1.pattern0,overlay,7105,0,0,0
+    animation1.pattern1,overlay,7100,150,0,0
+    animation1.pattern2,overlay,7106,150,0,0
+    animation1.pattern3,overlay,7100,150,0,0
+    animation1.pattern4,overlay,7105,150,0,0
+    animation1.pattern5,overlay,7100,150,0,0
+    animation1.pattern6,overlay,-1,150,0,0
+}
+
+
+
+//------------------------------------------------------みみ設定
+//みみふつう
+surface1400
+{
+element0,overlay,mimi0.png,0,0
+}
+
+
+//みみぺた
+surface1401
+{
+    element0,overlay,mimi1.png,0,0
+}
+
+//みみびっくり
+surface1402
+{
+    element0,overlay,mimi2.png,0,0
+}
+
+
+//------------------------------------------------------みみ設定
+//ふつうみみ
+surface.append0-2,6,9,11,12,14,18,100-102,106,109,111,112,114,118
+{
+    animation355.interval,runonce
+    animation355.pattern0,overlay,1400,0,0,0
+
+    animation355.collisionex0,mimi,polygon,166,72,156,174,170,195,206,155,229,150,274,159,297,189,312,181,363,102
+}
+
+
+//ぺたみみ
+surface.append3,5,7,17,103,105,107,117
+{
+    animation356.interval,runonce
+    animation356.pattern0,overlay,1401,0,0,0
+
+    animation356.collisionex0,mimi,polygon,198,159,77,174,152,221
+    animation356.collisionex1,mimi,polygon,264,154,291,175,303,212,396,158,382,141
+}
+
+
+//びっくりみみ
+surface.append4,8,13,15,16,104,108,113,115,116
+{
+    animation357.interval,runonce
+    animation357.pattern0,overlay,1402,0,0,0
+
+    animation357.collisionex0,mimi,polygon,160,72,155,188,170,195,205,156,230,150,256,152,277,163,293,183,304,156,242,53
+}
+
+
+//------------------------------------------------------しっぽ設定
+//しっぽ1　ふつう
+surface1405
+{
+    element0,overlay,sippo0.png,0,0
+}
+
+
+//しっぽ2　きょうみ
+surface1406
+{
+    element0,overlay,sippo1.png,0,0
+}
+
+
+//しっぽ3　しょげ
+surface1407
+{
+    element0,overlay,sippo2.png,0,0
+}
+
+
+//しっぽ4　びっくり
+surface1408
+{
+    element0,overlay,sippo3.png,0,0
+}
+
+
+//------------------------------------------------------しっぽ設定
+//しっぽ1　ふつう
+surface.append0,1,11,14,15,100,109,111,114,
+{
+    animation255.interval,runonce
+    animation255.option,background
+    animation255.pattern0,overlay,1405,0,0,0
+
+    animation255.collisionex0,tail,rect,354,205,481,391
+}
+
+
+//しっぽ2　きょうみ
+surface.append4,6,13,16,18,104,106,113,115,118
+{
+    animation256.interval,runonce
+    animation256.option,background
+    animation256.pattern0,overlay,1406,0,0,0
+
+    animation256.collisionex0,tail,rect,354,209,483,388
+}
+
+
+//しっぽ3　しょげ
+surface.append3,5,7,9,12,17,101,103,105,107,116,117
+{
+    animation257.interval,runonce
+    animation257.option,background
+    animation257.pattern0,overlay,1407,0,0,0
+
+    animation257.collisionex0,tail,rect,365,243,505,432
+}
+
+
+//しっぽ4　びっくり
+surface.append2,8,102,108,112
+{
+    animation258.interval,runonce
+    animation258.option,background
+    animation258.pattern0,overlay,1408,0,0,0
+
+    animation258.collisionex0,tail,rect,346,157,467,394
+}
+
+
+//------------------------------------------------------まえがみ
+//うえから被せる髪
+surface8000
+{
+    element0,overlay,surface8000.png,0,0
+}
+
+
+
+//------------------------------------------------------さわり
+//ここからシェルに対しての追加のあれ
+surface.append0-9,11-118
+{
+    //さわり反応
+    collisionex0,head,polygon,232,156,203,162,179,200,186,227,292,208,284,177,264,158
+    collisionex1,hair,polygon,285,239,284,266,273,300,268,332,289,347,283,364,272,369,275,377,298,365,315,340,294,325,295,300,323,281,326,231
+    collisionex2,cheek,circle,213,279,8
+    collisionex3,cheek,circle,271,270,9
+    collisionex4,nose,circle,233,273,4
+    collisionex5,mouth,ellipse,232,282,252,292
+    collisionex6,neck,rect,234,304,272,318
+    collisionex7,arm,polygon,314,331,320,348,297,368,312,410,311,467,301,487,302,512,329,527,339,514,332,476,339,363,333,335
+    collisionex8,hand,polygon,160,329,139,336,114,383,114,394,149,377,162,364,181,354,182,347
+    collisionex9,bustUp,polygon,212,339,181,361,156,375,197,390,293,368,275,337
+    collisionex10,bust,polygon,154,375,110,397,78,436,76,467,83,481,306,474,311,451,312,411,299,379,294,371,199,390
+    collisionex11,bustUn,polygon,81,482,126,511,166,512,197,503,242,511,279,501,297,486,304,473
+    collisionex12,onaka,polygon,167,515,168,573,224,587,324,553,292,512,214,528
+    collisionex13,hip,polygon,315,555,331,622,352,618,340,572,328,552
+    collisionex14,hairUn,polygon,60,489,27,629,105,713,157,717,157,623,163,593,166,576,165,528,142,513
+    collisionex15,hairUn,polygon,338,401,334,483,343,527,345,581,353,627,342,688,359,711,472,688,484,678,498,567,456,535,455,488,415,389
+    collisionex16,xxx,polygon,218,629,227,637,241,641,252,637,254,625
+    collisionex17,legUp,polygon,166,573,167,582,157,644,246,650,349,639,351,619,329,622,314,558,224,588
+    collisionex18,leg,polygon,156,645,158,722,329,722,353,641,241,653
+
+    //前髪
+    animation999.interval,runonce
+    animation999.pattern0,overlay,8000,0,0,0
+}
+
+

@@ -1,0 +1,158 @@
+
+＃＃初期設定
+＃＄NOTIFYの自動保存=有効
+＃＄SendMailID=0
+＃＄SendNotyfiMailID=10000
+＃＄ExistMailPlugin=0
+＃＄SendMailEVENT=None
+
+
+＃＃変数解説
+＃＃＃＃＄SendMailID=0
+＃送信するメールの一番最初のID
+＃受信するごとに+1
+＃受信処理されるまで、最新のものに上書きされる。
+＃
+＃
+＃＃＃＃＄SendNotyfiMailID=10000
+＃返信を期待しないメールを送信する。
+＃送信するたびに自前でIDを加算する。
+＃送った後のことは考えない。
+＃送りすぎるとネタ切れが加速するので、ランダムトークよりシナリオ進行で使うといいだろう。
+＃SendMailIDのIDに追いつかれないようにすること。
+＃
+＃
+＃＃＃＃＄ExistMailPlugin=0
+＃プラグインが存在するかどうか。
+＃
+＃
+＃＃＃＃＃＄SendMailEVENT=None
+＃イベントを用意していない場合はNone
+＃イベント名を格納しておけば分岐できる。
+＃
+＃
+
+＊OnFirstBoot
+：はじめまして！
+
+＊OnBoot
+＃＞メールより優先したい処理	（） == X
+＞OnMailBoot	（ExistMailPlugin）== 1
+＃導入されていなければ通常処理
+＞OnBootEX	
+
+
+＃＃通常起動と同じ記入で動く。OnMailBoot経由かどうかは（R4）がOnBootかどうかで判別はできる。
+＊OnBootEX
+：\s[0]呼ばれて飛び出て （R0） 
+
+
+＊OnMailBoot
+：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,0,0,0,OnBoot,（zen2han,（SendMailID））,7]
+＃下記のようにしたいが、空のRを送信するとバグる。
+＃：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,（R1）, （R2）,（R3）,OnBoot,（zen2han,（SendMailID））,（R7）]
+
+
+＃＃必要に応じてOnGhostCalled/OnGhostCalledEX...等実装してください。
+＊OnMailStatusEX
+＃メールが既読済みで、イベントが用意されている場合
+＞OnMailEvent	（R6） == 3 && （SendMailEVENT） != None
+
+＃起動トークに戻る
+＞OnBootEX	（R4） == OnBoot
+
+＃他ゴから自ゴに切り替えた
+＞OnGhostChangedEX	（R4） == OnGhostChanged
+
+＃他ゴから自ゴが呼ばれた
+＞OnGhostCalledEX	（R4） == OnGhostCalled
+
+＃他の関数から呼び出される場合、適当に追加。
+＃＞OnEX	（R4） == 分岐名
+
+＃戻る処理をしない場合到達する。
+：\s[0]メール受信・派生先無し。 \n（R0） \n（R1） \n（R2） \n（R3） \n（R4） \n（R5） \n（R6） \n（R7）
+：呼んだ?
+
+
+＃＃メールにイベントが用意されていた場合発火する。イベントはSendMailEVENTで指定。
+＊OnMailEvent
+＃次のメールIDを用意
+＄SendMailID=（SendMailID） + 1
+＞MailEventデート	（SendMailEVENT） == デート
+＞MailEvent水族館	（SendMailEVENT） == 水族館
+＃イベントを用意し忘れていた場合呼ばれる。
+：なんか約束してたっけ。
+
+
+＊MailEventデート
+＃イベント消化としてNoneを。
+＄SendMailEVENT=None
+：デートの時間だ!
+
+＊MailEvent水族館
+＄SendMailEVENT=None
+：水族館の時間だ!
+
+
+
+＃初回に拾うことができないので、このように処理する。
+＃＊OnSecondChangeを使わなければ、ランダムトークと併用できる。
+＊OnMinuteChange
+＞OnMailPluginTrue	（導入済みプラグイン「MailBox」の存在） == 1 && （ExistMailPlugin） == 0
+＞OnMailPluginFalse	（導入済みプラグイン「MailBox」の存在） == 0 && （ExistMailPlugin） == 1
+
+＃ アドレス交換イベント
+＊OnMailPluginTrue
+＄ExistMailPlugin=1
+：最近スマホ買ったって?
+アドレス交換しましょ?
+
+＃プラグインがオフにされるなどした場合
+＊OnMailPluginFalse
+＄ExistMailPlugin=0
+：メアド買えたん?
+
+
+＃＃ 外出のお誘いメール
+＃既に外出予定がある場合は発生しないように。
+＊	（ExistMailPlugin） == 1 && （SendMailEVENT）==None
+＄SendMailEVENT=デート
+：次はデートしよう。\![notifyplugin,MailBox,OnSendMail,（zen2han,（SendMailID））,（zen2han,（現在年））,（zen2han,（現在月））,（zen2han,（現在日））,さとり,デート,本文]
+
+＊	（ExistMailPlugin） == 1 && （SendMailEVENT）==None
+＄SendMailEVENT=水族館
+：次は水族館にいこう。\![notifyplugin,MailBox,OnSendMail,（zen2han,（SendMailID））,（zen2han,（現在年））,（zen2han,（現在月））,（zen2han,（現在日））,さとり,水族館,本文]
+
+
+＃＃ 約束などを伴わないメール
+＃SendMailEVENTを使用しない。
+＃SendMailIDではなく、SendNotyfiMailIDを使用する。
+＃送りすぎるとひどいことになる。ランダムトーク非推奨。
+＊	（ExistMailPlugin） == 1
+＄SendNotyfiMailID=（SendNotyfiMailID） + 1
+：退屈～遊ぼ。\![notifyplugin,MailBox,OnSendMail,（zen2han,（SendNotyfiMailID））,（zen2han,（現在年））,（zen2han,（現在月））,（zen2han,（現在日））,さとり,駄文,本文]
+
+
+＃ユーザにプラグインを入れるように導入する。
+＃プラグインがない?スマホでも買いに行け。
+＊	（ExistMailPlugin） == 0
+：j[https://github.com/ambergon/ukagakaPlugin_mailBox/releases]スマホ買いに行こ?
+
+＊
+：ランダム1
+＊
+：ランダム2
+＊
+：ランダム3
+
+＊0つつかれ
+＞OnTalk
+
+＊OnClose
+：またね。
+
+
+
+
+

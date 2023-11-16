@@ -1,0 +1,17 @@
+＊初期化
+＄喋り間隔	１０秒
+＄喋り間隔誤差	０％
+＄デフォルトサーフェス0	0
+＄デフォルトサーフェス1	10
+＄スコープ切り換え時	\n[half]
+＄ユーザ名	ユーザ
+＄自動挿入ウェイトの倍率	１００％
+＄会話時サーフェス戻し	有効
+＄NOTIFYの自動保存=有効
+＄ExistMailPlugin=0
+＄SendMailID=0
+＄SendNotyfiMailID=10000
+＄SendMailEVENT=None
+＠SAORI
+FindSatolist,satolist.dll,find_satolist
+SendSatolist,satolist.dll,send_satolist
