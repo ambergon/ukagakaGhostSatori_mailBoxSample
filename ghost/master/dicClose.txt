@@ -1,0 +1,19 @@
+
+＃＃ 終了時に メールを投げる。 Closeイベント用 一週間後に発火。発火前に起動された場合は 自動削除。 
+＃＃ 終了時に メールを投げる。 Closeイベント用 一週間後に発火。発火前に起動された場合は 自動削除。
+
+
+
+
+
+
+＃SAORI不使用送信
+＊OnClose
+＄SendCloseMailID=（SendCloseMailID）+1
+：また連絡するね～\![notifyplugin,MailBox,OnSendMail,（SendCloseMailID）,（現在年）,（現在月）,（calc,（現在日）+7）,イブ,ねぇ～!また遊びにおいでよ!,最近遊びに来てくれてないじゃん!\n\n暇だ～かまえ～]
+
+
+＃SAORI 使用送信
+＊OnClose
+＄SendCloseMailID=（SendCloseMailID）+1
+：気をつけて帰るんだよ～（CalcCalendar,（現在年）,（現在月）,（現在日）,0,0,7）\![notifyplugin,MailBox,OnSendMail,（SendCloseMailID）,（S0）,（S1）,（S2）,イブ,暇～,だからさー\nどっかいこ?]

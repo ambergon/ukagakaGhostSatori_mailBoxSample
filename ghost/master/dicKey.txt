@@ -1,0 +1,27 @@
+
+
+
+
+＊OnKeyPress
+＞Key_R	（R0） == r
+＞Key_G	（R0） == g
+＞Key_N	（R0） == n
+
+
+＃ リロード
+＊Key_R
+：\![reload,shiori]\0\s[0]\_qReloaded.\1\s[-1]\0\_q\e
+
+
+＃ ブラウザ
+＊Key_G
+：\j[file:///C:/Program Files/Google/Chrome/Application/chrome.exe]
+
+
+＃ nyagos
+＊Key_N
+：\j[file:///C:/Users/foxgo/scoop/shims/nyagos.exe]
+
+
+
+

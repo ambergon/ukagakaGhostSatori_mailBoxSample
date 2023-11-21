@@ -1,4 +1,4 @@
 charset,UTF-8
 type,ghost
-name,X
-directory,X
+name,2023Xmas
+directory,ukagakaGhost_Eve

@@ -1,0 +1,50 @@
+
+＃＃ メールイベントを記入するファイル。
+＃＃ メールイベントを記入するファイル。
+
+
+
+
+
+＃＃ イベント受け付け関数   呼ばれたときに目的地（SendMailEVENT）の中身によって分岐する。
+＃＃ イベント受け付け関数   呼ばれたときに目的地（SendMailEVENT）の中身によって分岐する。
+
+
+＊OnMailEvent
+
+＃次のメールIDを用意
+＄SendMailID=（SendMailID） + 1
+
+＃実装イベントの数だけ分岐を実装
+＞MailEventデート	（SendMailEVENT） == デート
+＞MailEvent水族館	（SendMailEVENT） == 水族館
+＞MailEventNone
+
+
+
+＃＃ 未実装イベント      イベントを用意し忘れていた場合呼ばれる。
+＃＃ 未実装イベント
+＊MailEventNone
+：なんか約束してたっけ。
+
+
+
+
+＃＃ 実装イベント
+＃＃ 実装イベント
+
+
+＊MailEventデート
+＃イベント消化としてNoneを。
+＄SendMailEVENT=None
+：デートの時間だ!
+
+＊MailEvent水族館
+＄SendMailEVENT=None
+：水族館の時間だ!
+
+
+
+
+
+

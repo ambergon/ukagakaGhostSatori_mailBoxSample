@@ -1,0 +1,87 @@
+
+
+
+
+＃＃ Boot 処理------------------------------------------------------
+＊OnBoot
+：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
+＃＞メールより優先したい処理	（） == X
+＞OnMailBoot	（ExistMailPlugin）== 1
+＃導入されていなければ通常処理
+＞OnBootEX	
+
+
+＊OnMailBoot
+＃R1をそのまま入れるのは危険である。\eなどが混入するからである。
+＃：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,（erase,（R1）,\e）,（R2）,（R3）,OnBoot,（SendMailID）,（R7）]
+：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,使わない,使わない,OnBoot,（SendMailID）,使わない]
+
+
+
+＃＃ 切り替え反応---------------------------------------------------
+＊OnGhostChanged
+：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
+＃＞メールより優先したい処理	（） == X
+＞OnMailChanged	（ExistMailPlugin）== 1
+＃導入されていなければ通常処理
+＞OnGhostChangedEX	
+
+
+＊OnMailChanged
+：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,（R2）,使わない,OnGhostChanged,（SendMailID）,使わない]
+
+
+
+
+＃＃ 呼び出し反応---------------------------------------------------
+＊OnGhostCalled
+：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
+＃＞メールより優先したい処理	（） == X
+＞OnMailCalled	（ExistMailPlugin）== 1
+＃導入されていなければ通常処理
+＞OnGhostCalledEX
+
+＊OnMailCalled
+：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,（R2）,使わない,OnGhostCalled,（SendMailID）,使わない]
+
+
+
+
+
+
+＃＃ 呼ぶとメールイベントを検索する。無ければR4に戻る。 
+＃＃ 呼ぶとメールイベントを検索する。無ければR4に戻る。 
+
+＃＃ 分岐実装-------------------------------------------------------
+＊OnMailStatusEX
+＃メールが既読済みで、イベントが用意されている場合
+＞OnMailEvent	（R6） == 3 && （SendMailEVENT） != None
+
+＃起動トークに戻る
+＞OnBootEX	（R4） == OnBoot
+
+＃他ゴから自ゴに切り替えた
+＞OnGhostChangedEX	（R4） == OnGhostChanged
+
+＃他ゴから自ゴが呼ばれた
+＞OnGhostCalledEX	（R4） == OnGhostCalled
+
+＃他の関数から呼び出される場合、適当に追加。
+＃＞OnEX	（R4） == 分岐名
+
+＃戻る処理をしない場合到達する。
+：\s[0]メール受信・派生先無し。 
+R0 = （R0） 
+R1 = （R1） 
+R2 = （R2） 
+R3 = （R3） 
+R4 = （R4） 
+R5 = （R5） 
+R6 = （R6） 
+R7 = （R7）
+
+
+
+
+
+
