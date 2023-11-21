@@ -1,0 +1,5 @@
+
+memo.md,noupdate,nonar
+char.md,noupdate,nonar
+code/,noupdate,nonar
+test/,noupdate,nonar
