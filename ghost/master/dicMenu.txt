@@ -16,7 +16,7 @@
 ：\![execute,http-POST,https://script.google.com/macros/s/AKfycbyl9vCPjO3SEBFP6O9k80ZfAqahxzdahepDgKHsUCVZoA68RyNdlWRWAMBPYnve_6TepA/exec,--param=message_body="Eve;（USER_ID）;（erase,（R0）,"）"]
 送信しました。
 
-＊メールを送る
+＊メッセージを送る
 ：メッセージを送ることができます。
 送ったメッセージはゴーストのトークに役立てられます。
 \![open,inputbox,OnLetter,-1]
@@ -29,4 +29,4 @@
 
 ＊MENU
 ：
-＿メールを送る
+＿メッセージを送る
