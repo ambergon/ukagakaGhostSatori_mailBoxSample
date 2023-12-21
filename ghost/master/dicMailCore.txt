@@ -1,29 +1,110 @@
 
+＃{{{
+＃＃ Saori を使わずに送信するサンプル
+＃＊OnClose	（ExistPluginMailBox） == 1 && （SendMailEVENT）==None
+＃＄SendMailEVENT=目的地
+＃：終了テキスト\![notifyplugin,MailBox,OnSendMail,（SendMailID）,（現在年）,（現在月）,（calc,（現在日）+1）,送信者,タイトル,本文]
+＃
+＃
+＃}}}
+＃{{{
+＃＃ 依存 Saori satori_conf.txt
+＃＃ https://github.com/ambergon/ukagakaSaori_CalcCalendarClang
+＃
+＃ ＠SAORI
+＃ CalcCalendar,Saori/ukagakaSaori_CalcCalendar.dll
+＃
+＃
+＃}}}
+＃{{{
+＃＃ Test Saori CalcCalendar
+＃：（CalcCalendar,（現在年）,（現在月）,（現在日）,０,０,０）
+＃現在年 : （現在年）
+＃現在月 : （現在月）
+＃現在日 : （現在日）
+＃計算年 : （S0）
+＃計算月 : （S1）
+＃計算日 : （S2）
+＃
+＃
+＃}}}
 
 
 
+
+＃{{{
+＃＃ MailBox が触る変数---------------------------------------------
+＃ ＄ExistPluginMailBox=0
+＃   現在プラグインが使用可能かどうか
+＃
+＃ ＄SendMailID
+＃   最後に送信したメールID
+＃   送信時に+1
+＃
+＃ ＄SendMailEVENT=None
+＃   メールIDに紐づいたイベント
+＃
+＃}}}
+
+
+＃{{{
+＃＃ 分岐実装-------------------------------------------------------
+＃＃ R4 ： 呼び出しイベント名
+＃＃ R5 ： 確認メールID
+＃＃ R6 ： 確認メールステータス
+＃＃
+＃＃ メールが既読済みだとイベントリストに照合する。
+＊OnMailStatusEX
+＃＞OnMailEvent	（R6）==3&&（SendMailEVENT）!=None
+＞OnMailEvent	（R6）==3
+＞MailDelete	（R6）==1&&（SendMailEVENT）==Back
+＞OnGhostChangedEX	（R4）==OnGhostChanged
+＞OnGhostCalledEX	（R4）==OnGhostCalled
+＞OnBootEX
+＃戻る処理をしない場合到達する。
+＃：\s[0]メール受信・派生先無し。 
+＃R0 = （R0） 
+＃R1 = （R1） 
+＃R2 = （R2） 
+＃R3 = （R3） 
+＃R4 = （R4） 
+＃R5 = （R5） 
+＃R6 = （R6） 
+＃R7 = （R7）
+
+＃ 未達メールを処分して戻る。
+＊MailDelete
+\![notifyplugin,MailBox,OnDeleteMail,（R5）]\b[-1]
+＞OnGhostChangedEX	（R4）==OnGhostChanged
+＞OnGhostCalledEX	（R4）==OnGhostCalled
+＞OnBootEX
+
+
+
+＃}}}
+＃{{{
 ＃＃ Boot 処理------------------------------------------------------
+＃ ＞メールより優先したいがあれば先に書くこと。
+＃ 導入されていなければ通常処理
 ＊OnBoot
-：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
-＃＞メールより優先したい処理	（） == X
-＞OnMailBoot	（ExistMailPlugin）== 1
-＃導入されていなければ通常処理
+（BootHourCount）
+＞OnMailBoot	（ExistPluginMailBox）==1
 ＞OnBootEX	
 
 
+＃＃ 
+＃ R1をそのまま入れるのは危険である。\eなどが混入するからである。
+＃ ：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,（erase,（R1）,\e）,（R2）,（R3）,OnBoot,（SendMailID）,（R7）]
 ＊OnMailBoot
-＃R1をそのまま入れるのは危険である。\eなどが混入するからである。
-＃：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,（erase,（R1）,\e）,（R2）,（R3）,OnBoot,（SendMailID）,（R7）]
 ：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,使わない,使わない,OnBoot,（SendMailID）,使わない]
 
 
-
+＃}}}
+＃{{{
 ＃＃ 切り替え反応---------------------------------------------------
 ＊OnGhostChanged
-：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
-＃＞メールより優先したい処理	（） == X
-＞OnMailChanged	（ExistMailPlugin）== 1
-＃導入されていなければ通常処理
+（BootHourCount）
+＞OnMailChanged	（ExistPluginMailBox）==1
 ＞OnGhostChangedEX	
 
 
@@ -31,54 +112,85 @@
 ：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,（R2）,使わない,OnGhostChanged,（SendMailID）,使わない]
 
 
-
-
+＃}}}
+＃{{{
 ＃＃ 呼び出し反応---------------------------------------------------
 ＊OnGhostCalled
-：\![notifyplugin,MailBox,OnDeleteMailNotArrive,（SendCloseMailID）]
-＃＞メールより優先したい処理	（） == X
-＞OnMailCalled	（ExistMailPlugin）== 1
-＃導入されていなければ通常処理
+（BootHourCount）
+＞OnMailCalled	（ExistPluginMailBox）==1
 ＞OnGhostCalledEX
+
 
 ＊OnMailCalled
 ：\![raiseplugin,MailBox,OnStatusMailEX,（R0）,終了時スクリプト,（R2）,使わない,OnGhostCalled,（SendMailID）,使わない]
 
 
+＃}}}
+＃{{{
+＃＃ つつかれで発火するメールイベント-------------------------------
+＃MailID     =（R0）
+＃MailStatus =（R1）
+＊OnMailStatus
+＞初回メールイベント	（R1）==3&&（SendMailEVENT）==初回メール
+＞MENU
+
+
+＊初回メールイベント
+＄SendMailEVENT=None
+：すごい!ちゃんと届くんだね!
+
+＃}}}
+
+
+＃{{{
+＃＃ プラグインの存在検知 = ExistPluginMailBox----------------------
+＃＃ ExistPluginMailBox = 1 ： 有効
+＃＃ ExistPluginMailBox = 0 ： 無効
+＃＃
+＃＃ OnGhostChangingを使用していないと、2回呼ばれる為このようになった。
+＃初期化処理
+＊OnSatoriBoot
+＄ExistPluginMailBoxFlag=0
+＄ExistPluginMailBoxFlagOnce=0
+
+＊OnSatoriClose
+（when,（ExistPluginMailBoxFlagOnce）==0&&（ExistPluginMailBoxFlag）==1,（set,ExistPluginMailBox,1）,）
+（when,（ExistPluginMailBoxFlagOnce）==0&&（ExistPluginMailBoxFlag）==0,（set,ExistPluginMailBox,0）,）
+＄ExistPluginMailBoxFlagOnce=1
+
+＃ 実行タイミングはBoot後少し後。
+＃ リロードでも発生する。起動後すぐ終了等を繰り返すとプラグインがオフだと判定されたりする。
+＊OnExistPluginMailBox
+＄ExistPluginMailBox=1
+＄ExistPluginMailBoxFlag=1
+
+
+＃}}}
 
 
 
 
-＃＃ 呼ぶとメールイベントを検索する。無ければR4に戻る。 
-＃＃ 呼ぶとメールイベントを検索する。無ければR4に戻る。 
 
-＃＃ 分岐実装-------------------------------------------------------
-＊OnMailStatusEX
-＃メールが既読済みで、イベントが用意されている場合
-＞OnMailEvent	（R6） == 3 && （SendMailEVENT） != None
 
-＃起動トークに戻る
-＞OnBootEX	（R4） == OnBoot
 
-＃他ゴから自ゴに切り替えた
-＞OnGhostChangedEX	（R4） == OnGhostChanged
 
-＃他ゴから自ゴが呼ばれた
-＞OnGhostCalledEX	（R4） == OnGhostCalled
 
-＃他の関数から呼び出される場合、適当に追加。
-＃＞OnEX	（R4） == 分岐名
 
-＃戻る処理をしない場合到達する。
-：\s[0]メール受信・派生先無し。 
-R0 = （R0） 
-R1 = （R1） 
-R2 = （R2） 
-R3 = （R3） 
-R4 = （R4） 
-R5 = （R5） 
-R6 = （R6） 
-R7 = （R7）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

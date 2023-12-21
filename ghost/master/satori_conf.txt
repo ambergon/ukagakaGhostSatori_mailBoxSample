@@ -1,6 +1,6 @@
 ＊初期化
 ＄喋り間隔	１１０秒
-＄喋り間隔誤差	１００％
+＄喋り間隔誤差	１０％
 ＄デフォルトサーフェス0	0
 ＄デフォルトサーフェス1	10
 ＄スコープ切り換え時	\n[half]
@@ -8,20 +8,18 @@
 ＄自動挿入ウェイトの倍率	１００％
 ＄会話時サーフェス戻し	有効
 
-
-
 ＃＃＃＃MailBox初期設定
 ＄NOTIFYの自動保存=有効
-＄ExistMailPlugin=0
+＄ExistPluginMailBox=1
 ＄SendMailID=0
 ＄SendMailEVENT=None
-＄SendNotyfiMailID=1000000
-＄SendCloseMailID=2000000
-
+＄MailSpan=1
 
 ＠SAORI
 ＃呼び出し名,ディレクトリ/名前.dll
 CalcCalendar,Saori/ukagakaSaori_CalcCalendar.dll
+WhenYouBack,Saori/ukagakaSaori_WhenYouBack.dll
+
 
 
 

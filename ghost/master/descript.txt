@@ -3,7 +3,7 @@ name,イブ
 type,ghost
 craftman,ambergon
 
-readme,readme.txt
+readme,ReadMe.md
 sakura.name,イブ
 
 sakura.seriko.defaultsurface,0
@@ -16,4 +16,4 @@ kero.seriko.alignmenttodesktop,bottom
 
 shiori,satori.dll
 
-homeurl,https://raw.githubusercontent.com/ambergon/ukagakaGhost_sizukanaDanran/version
+homeurl,https://raw.githubusercontent.com/ambergon/ukagakaGhost_Eve/version

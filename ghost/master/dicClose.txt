@@ -1,19 +1,79 @@
 
-＃＃ 終了時に メールを投げる。 Closeイベント用 一週間後に発火。発火前に起動された場合は 自動削除。 
-＃＃ 終了時に メールを投げる。 Closeイベント用 一週間後に発火。発火前に起動された場合は 自動削除。
 
 
 
 
+＃＃＃＃終了
+＃（CloseHourCount）
+＃＃OnGhostChanging
 
 
-＃SAORI不使用送信
 ＊OnClose
-＄SendCloseMailID=（SendCloseMailID）+1
-：また連絡するね～\![notifyplugin,MailBox,OnSendMail,（SendCloseMailID）,（現在年）,（現在月）,（calc,（現在日）+1）,イブ,ねぇ～!また遊びにおいでよ!,最近遊びに来てくれてないじゃん!\n\n暇だ～かまえ～]
+（CloseHourCount）
+＃＞OnCloseSendMail	（ExistPluginMailBox）==1&&（SendMailEVENT）==None
+＞CloseMorning	（現在時）==7 ||（現在時）==8 ||（現在時）==9
+＞CloseNight	（現在時）==21 ||（現在時）==23 ||（現在時）==0 ||（現在時）==1 ||（現在時）==2 
+＞MailClose	（SendMailEVENT）==None
+＞NomalClose
+
+＃{{{
+＃ 7-9
+＊CloseMorning
+：\s[微笑む]いってらっしゃい、(U)。今日も一日、頑張ってくださいね。
+
+＃}}}
+＃{{{
+＃ 21-2
+＊CloseNight
+：\s[ふつう]おやすみなさい、(U)。良い夢を見てね。
+また朝起きたら一緒に過ごしましょう。ぐっすり眠ってくださいね。
+
+＊CloseNight
+：\s[微笑む]あら、(U)、もう寝ちゃったの？ゆっくり休んでね。おやすみなさい、(U)。
+
+＊CloseNight
+：\s[微笑む]ふふ、もう眠っちゃったの？\w9\w3\s[困っちゃう]あなたが寝てる間、静かにしておくね。ゆっくり休んで。(U)。\s[ふつう]おやすみなさい。
+
+＊CloseNight
+：\s[ふつう]…(U)？\w9\w3\s[きょとん]もう完全に眠っちゃったみたい。
+\s[微笑む]しょうがないなぁ、今日はこのまま寝かせてあげよう。
+\s[微笑む]おやすみ、(U)。ゆっくり休んでね。
+
+＊CloseNight
+：\s[微笑む]じゃあ、今日はもう寝ましょうか。(U)。
+\s[楽しい]あたたかい布団で一緒にぐっすり眠れたらいいね。おやすみなさい、(U)。
+
+＊CloseNight
+：\s[微笑む]\s[ふつう]おやすみ（Ut）、良い夢を。\s[楽しい]明日も一緒にいい日にしようね。
+＃}}}
 
 
-＃SAORI 使用送信
-＊OnClose
-＄SendCloseMailID=（SendCloseMailID）+1
-：気をつけて帰るんだよ～（CalcCalendar,（現在年）,（現在月）,（現在日）,0,0,1）\![notifyplugin,MailBox,OnSendMail,（SendCloseMailID）,（S0）,（S1）,（S2）,イブ,暇～,だからさー\nどっかいこ?]
+＃メールが空いている時の終了
+＃ backは使いまわしでよい。
+＊MailClose
+＄SendMailID=（SendMailID）+1
+＄SendMailEVENT=Back
+：また連絡するね～。
+（CalcCalendar,（現在年）,（現在月）,（現在日）,0,0,30）\![notifyplugin,MailBox,OnSendMail,（SendMailID）,（S0）,（S1）,（S2）,イブ,お元気ですか?,すまほっておもしろいね!\nよくわかんない変なメールとかも来るけど。]
+
+
+＃ その他の終了
+＊NomalClose
+：またね～!
+
+＃（CalcCalendar,（現在年）,（現在月）,（現在日）,0,0,（MailSpan））\![notifyplugin,MailBox,OnSendMail,（SendMailID）,（S0）,（S1）,（S2）,イブ,暇～,だからさー\nどっかいこ?]
+＃
+
+
+
+
+
+
+
+
+
+
+
+
+
+

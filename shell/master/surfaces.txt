@@ -51,7 +51,14 @@ sakura.surface.alias
 
 }
 
-
+//{{{
+//備考--------------------------------------------------------------
+//折り畳み化したがshell自体は変更なしで運用する。
+//変更点はsurfaces1.txtに作る。
+//}}}
+//{{{
+//通常--------------------------------------------------------------
+//{{{
 //ふつう
 surface0
 {
@@ -68,8 +75,8 @@ surface0
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //微笑む
 surface1
 {
@@ -80,8 +87,8 @@ surface1
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //叱る
 surface2
 {
@@ -98,8 +105,8 @@ surface2
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //かなしい
 surface3
 {
@@ -116,8 +123,8 @@ surface3
     animation399.interval,runonce
     animation399.pattern0,overlay,6001,0,0,0
 }
-
-
+//}}}
+//{{{
 //楽しい
 surface4
 {
@@ -134,8 +141,8 @@ surface4
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //困っちゃう
 surface5
 {
@@ -152,8 +159,8 @@ surface5
     animation399.interval,runonce
     animation399.pattern0,overlay,6005,0,0,0
 }
-
-
+//}}}
+//{{{
 //きょとん
 surface6
 {
@@ -170,8 +177,8 @@ surface6
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //不安
 surface7
 {
@@ -188,8 +195,8 @@ surface7
     animation399.interval,runonce
     animation399.pattern0,overlay,6001,0,0,0
 }
-
-
+//}}}
+//{{{
 //びっくり
 surface8
 {
@@ -206,8 +213,8 @@ surface8
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //悩む
 surface9
 {
@@ -218,14 +225,14 @@ surface9
     animation399.interval,runonce
     animation399.pattern0,overlay,6004,0,0,0
 }
-
-
+//}}}
+//{{{
 surface10
 {
     element0,overlay,surface10.png,0,0
 }
-
-
+//}}}
+//{{{
 //ぽかーん
 surface11
 {
@@ -242,8 +249,8 @@ surface11
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //むっ…
 surface12
 {
@@ -260,8 +267,8 @@ surface12
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //ぺろん
 surface13
 {
@@ -272,8 +279,8 @@ surface13
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす
 surface14
 {
@@ -290,8 +297,8 @@ surface14
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/微笑む
 surface15
 {
@@ -308,8 +315,8 @@ surface15
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/すねる
 surface16
 {
@@ -326,8 +333,8 @@ surface16
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/かなしい
 surface17
 {
@@ -344,8 +351,8 @@ surface17
     animation399.interval,runonce
     animation399.pattern0,overlay,6005,0,0,0
 }
-
-
+//}}}
+//{{{
 //にやり
 surface18
 {
@@ -362,9 +369,11 @@ surface18
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
-//------------------------------------------------------赤面
+//}}}
+//}}}
+//{{{
+//赤面/照れ---------------------------------------------------------
+//{{{
 //ふつう
 surface100
 {
@@ -381,8 +390,8 @@ surface100
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //微笑む
 surface101
 {
@@ -393,8 +402,8 @@ surface101
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //叱る
 surface102
 {
@@ -411,8 +420,8 @@ surface102
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //かなしい
 surface103
 {
@@ -429,8 +438,8 @@ surface103
     animation399.interval,runonce
     animation399.pattern0,overlay,6001,0,0,0
 }
-
-
+//}}}
+//{{{
 //楽しい
 surface104
 {
@@ -447,8 +456,8 @@ surface104
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //困っちゃう
 surface105
 {
@@ -465,8 +474,8 @@ surface105
     animation399.interval,runonce
     animation399.pattern0,overlay,6005,0,0,0
 }
-
-
+//}}}
+//{{{
 //きょとん
 surface106
 {
@@ -483,8 +492,8 @@ surface106
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //不安
 surface107
 {
@@ -501,8 +510,8 @@ surface107
     animation399.interval,runonce
     animation399.pattern0,overlay,6001,0,0,0
 }
-
-
+//}}}
+//{{{
 //びっくり
 surface108
 {
@@ -519,8 +528,8 @@ surface108
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //悩む
 surface109
 {
@@ -531,8 +540,8 @@ surface109
     animation399.interval,runonce
     animation399.pattern0,overlay,6004,0,0,0
 }
-
-
+//}}}
+//{{{
 //ぽかーん
 surface111
 {
@@ -549,8 +558,8 @@ surface111
     animation399.interval,runonce
     animation399.pattern0,overlay,6003,0,0,0
 }
-
-
+//}}}
+//{{{
 //むっ…
 surface112
 {
@@ -567,8 +576,8 @@ surface112
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //ぺろん
 surface113
 {
@@ -579,8 +588,8 @@ surface113
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす
 surface114
 {
@@ -597,8 +606,8 @@ surface114
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/微笑む
 surface115
 {
@@ -615,8 +624,8 @@ surface115
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/すねる
 surface116
 {
@@ -633,8 +642,8 @@ surface116
     animation399.interval,runonce
     animation399.pattern0,overlay,6002,0,0,0
 }
-
-
+//}}}
+//{{{
 //そらす/かなしい
 surface117
 {
@@ -651,8 +660,8 @@ surface117
     animation399.interval,runonce
     animation399.pattern0,overlay,6005,0,0,0
 }
-
-
+//}}}
+//{{{
 //にやり
 surface118
 {
@@ -669,9 +678,11 @@ surface118
     animation399.interval,runonce
     animation399.pattern0,overlay,6000,0,0,0
 }
-
-
-//------------------------------------------------------くちぱく設定
+//}}}
+//}}}
+//{{{
+//口パク追加--------------------------------------------------------
+//{{{
 //通常ボディ用の口パク
 surface.append0-9,11-18
 {
@@ -684,8 +695,8 @@ surface.append0-9,11-18
     animation1.pattern4,overlay,7006,150,0,0
     animation1.pattern5,overlay,-1,150,0,0
 }
-
-
+//}}}
+//{{{
 //赤面時用の口パク
 surface.append100-118
 {
@@ -699,31 +710,32 @@ surface.append100-118
     animation1.pattern5,overlay,7100,150,0,0
     animation1.pattern6,overlay,-1,150,0,0
 }
-
-
-
-//------------------------------------------------------みみ設定
+//}}}
+//}}}
+//{{{
+//耳の動き----------------------------------------------------------
+//{{{
 //みみふつう
 surface1400
 {
 element0,overlay,mimi0.png,0,0
 }
-
-
+//}}}
+//{{{
 //みみぺた
 surface1401
 {
     element0,overlay,mimi1.png,0,0
 }
-
+//}}}
+//{{{
 //みみびっくり
 surface1402
 {
     element0,overlay,mimi2.png,0,0
 }
-
-
-//------------------------------------------------------みみ設定
+//}}}
+//{{{
 //ふつうみみ
 surface.append0-2,6,9,11,12,14,18,100-102,106,109,111,112,114,118
 {
@@ -732,8 +744,8 @@ surface.append0-2,6,9,11,12,14,18,100-102,106,109,111,112,114,118
 
     animation355.collisionex0,mimi,polygon,166,72,156,174,170,195,206,155,229,150,274,159,297,189,312,181,363,102
 }
-
-
+//}}}
+//{{{
 //ぺたみみ
 surface.append3,5,7,17,103,105,107,117
 {
@@ -743,8 +755,8 @@ surface.append3,5,7,17,103,105,107,117
     animation356.collisionex0,mimi,polygon,198,159,77,174,152,221
     animation356.collisionex1,mimi,polygon,264,154,291,175,303,212,396,158,382,141
 }
-
-
+//}}}
+//{{{
 //びっくりみみ
 surface.append4,8,13,15,16,104,108,113,115,116
 {
@@ -753,38 +765,39 @@ surface.append4,8,13,15,16,104,108,113,115,116
 
     animation357.collisionex0,mimi,polygon,160,72,155,188,170,195,205,156,230,150,256,152,277,163,293,183,304,156,242,53
 }
-
-
-//------------------------------------------------------しっぽ設定
+//}}}
+//}}}
+//{{{
+//しっぽの動き------------------------------------------------------
+//{{{
 //しっぽ1　ふつう
 surface1405
 {
     element0,overlay,sippo0.png,0,0
 }
-
-
+//}}}
+//{{{
 //しっぽ2　きょうみ
 surface1406
 {
     element0,overlay,sippo1.png,0,0
 }
-
-
+//}}}
+//{{{
 //しっぽ3　しょげ
 surface1407
 {
     element0,overlay,sippo2.png,0,0
 }
-
-
+//}}}
+//{{{
 //しっぽ4　びっくり
 surface1408
 {
     element0,overlay,sippo3.png,0,0
 }
-
-
-//------------------------------------------------------しっぽ設定
+//}}}
+//{{{
 //しっぽ1　ふつう
 surface.append0,1,11,14,15,100,109,111,114,
 {
@@ -794,8 +807,8 @@ surface.append0,1,11,14,15,100,109,111,114,
 
     animation255.collisionex0,tail,rect,354,205,481,391
 }
-
-
+//}}}
+//{{{
 //しっぽ2　きょうみ
 surface.append4,6,13,16,18,104,106,113,115,118
 {
@@ -805,8 +818,8 @@ surface.append4,6,13,16,18,104,106,113,115,118
 
     animation256.collisionex0,tail,rect,354,209,483,388
 }
-
-
+//}}}
+//{{{
 //しっぽ3　しょげ
 surface.append3,5,7,9,12,17,101,103,105,107,116,117
 {
@@ -816,8 +829,8 @@ surface.append3,5,7,9,12,17,101,103,105,107,116,117
 
     animation257.collisionex0,tail,rect,365,243,505,432
 }
-
-
+//}}}
+//{{{
 //しっぽ4　びっくり
 surface.append2,8,102,108,112
 {
@@ -827,19 +840,21 @@ surface.append2,8,102,108,112
 
     animation258.collisionex0,tail,rect,346,157,467,394
 }
-
-
-//------------------------------------------------------まえがみ
+//}}}
+//}}}
+//{{{
+//前髪--------------------------------------------------------------
+//{{{
 //うえから被せる髪
 surface8000
 {
     element0,overlay,surface8000.png,0,0
 }
-
-
-
-//------------------------------------------------------さわり
-//ここからシェルに対しての追加のあれ
+//}}}
+//}}}
+//{{{
+//さわり判定追加----------------------------------------------------
+//{{{
 surface.append0-9,11-118
 {
     //さわり反応
@@ -867,5 +882,9 @@ surface.append0-9,11-118
     animation999.interval,runonce
     animation999.pattern0,overlay,8000,0,0,0
 }
+//}}}
+//}}}
+
+
 
 

@@ -1,0 +1,80 @@
+charset,UTF-8
+
+descript
+{
+    version,1
+    maxwidth,500
+}
+
+sakura.surface.alias 
+{
+    //ai用追加
+	怒る,[12]
+	てへぺろ,[13]
+	舌出し,[13]
+
+    //使いやすさ
+	笑顔,[101]
+	笑顔/テレ,[101]
+
+    // ここから追加表情
+	C笑顔,[300]
+}
+
+// 0-118が表情
+// 5000-8000がパーツ
+
+// 300以降を作った表情に割り当てる。
+
+//{{{
+//BASE 微笑む/テレ+しっぽアニメ
+surface300
+{
+	//BASE 微笑む/テレ,[101]
+    element0,overlay,Body0.png,0,0
+    element1,overlay,surface5003.png,0,0
+    element2,overlay,surface7001.png,0,0
+
+    animation399.interval,runonce
+    animation399.pattern0,overlay,6000,0,0,0
+
+    //耳 寝かせ
+    animation355.interval,runonce
+    animation355.pattern0,overlay,1401,0,0,0
+
+    //しっぽピコピコ
+    animation400.interval,runonce
+    animation400.option,background
+    animation400.pattern0,overlay,1405,0,0,0
+    animation400.pattern1,overlay,1406,470,0,0
+    animation400.pattern2,overlay,1405,470,0,0
+    animation400.pattern3,overlay,1406,470,0,0
+    animation400.pattern4,overlay,1405,470,0,0
+    animation400.pattern5,overlay,1406,470,0,0
+
+    //耳が上に乗る分を隠す
+    //髪の毛
+    animation999.interval,runonce
+    animation999.pattern0,overlay,8000,0,0,0
+}
+//}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

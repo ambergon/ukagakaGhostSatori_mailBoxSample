@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+＊OnTranslate
+＄引数区切り追加	（バイト値、２）
+＄TransText	（R0）
+＄TransText	（replace（バイト値、２）（TransText）（バイト値、２）。（バイト値、２）。\w9\w9\w9）
+＄TransText	（replace（バイト値、２）（TransText）（バイト値、２）?（バイト値、２）?\w9\w9\w9）
+（TransText）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

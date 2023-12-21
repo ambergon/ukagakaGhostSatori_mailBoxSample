@@ -3,16 +3,65 @@
 
 
 ＊OnKeyPress
-＞Key_R	（R0） == r
-＞Key_G	（R0） == g
-＞Key_N	（R0） == n
+＃＃{{{
+＃＃ デベロッパーメニュー-------------------------------------------------------
+＞Key_T	（R0）==t&&（U）==アンバー 
+＞Key_R	（R0）==r&&（U）==アンバー 
+＞Key_S	（R0）==s&&（U）==アンバー 
+＞Key_M	（R0）==m&&（U）==アンバー 
+＃}}}
+＃{{{
+＃＃ 個人的なショートカット
+＞Key_G	（R0）==g&&（U）==アンバー
+＞Key_N	（R0）==n&&（U）==アンバー
+＞Key_P	（R0）==p&&（U）==アンバー 
+＞Key_O	（R0）==o&&（U）==アンバー
+＞Key_C	（R0）==c&&（U）==アンバー
+
+
+＃}}}
+
+
+
+
+
+
+
 
 
 ＃ リロード
 ＊Key_R
 ：\![reload,shiori]\0\s[0]\_qReloaded.\1\s[-1]\0\_q\e
+＃：\![reload,shell]\0\s[0]\_qReloaded.\1\s[-1]\0\_q\e
 
 
+＃ 未達メール
+＊Key_M
+：\![raiseplugin,MailBox,OnDevList,0]
+
+
+＃ テスト
+＊Key_T
+
+＃＄SendMailEVENT=水族館
+＃： （CalcCalendar,（現在年）,（現在月）,（現在日）,0,0,（MailSpan））\![notifyplugin,MailBox,OnSendMail,（SendMailID）,（S0）,（S1）,（S2）,イブ,ねぇ～!また遊びにおいでよ!,最近遊びに来てくれてないじゃん!\n\n暇だ～かまえ～]
+
+
+＃ ステータス
+＊Key_S
+：
+プラグイン有無  :（ExistPluginMailBox）
+次のデート先    :（SendMailEVENT）
+
+
+
+
+
+
+
+
+＃{{{
+＃＃ 個人的なリンク----------------------------------------------------------
 ＃ ブラウザ
 ＊Key_G
 ：\j[file:///C:/Program Files/Google/Chrome/Application/chrome.exe]
@@ -21,6 +70,28 @@
 ＃ nyagos
 ＊Key_N
 ：\j[file:///C:/Users/foxgo/scoop/shims/nyagos.exe]
+
+
+＃ paint
+＊Key_P
+：\j[file:///C:/Windows/system32/mspaint.exe]
+
+
+＃ dev_Ghost
+＊Key_O
+：\j[file:///D:/OneDrive/ukagaka/ghost/ukagakaGhost_eve/ghost/master]
+
+
+＃ ClipStudio
+＊Key_C
+：\j[file:///C:/Program Files/CELSYS/CLIP STUDIO 1.5/CLIP STUDIO PAINT/CLIPStudioPaint.exe]
+＃}}}
+
+
+
+
+
+
 
 
 

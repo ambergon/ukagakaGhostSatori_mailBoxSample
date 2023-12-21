@@ -1,5 +1,9 @@
 
 
+
+
+
+
 ＃＃バルーンの一文字目ではマッチしないようだ。
 ＃＊マッチ文字列
 ＃：表示内容
@@ -8,4 +12,11 @@
 ＊VIM
 ：この世で最も素晴らしいテキストエディタの一つ。
 Vimはいいぞ・・・
+
+＊MailBoxプラグイン
+：\j[https://github.com/ambergon/ukagakaPlugin_mailBox/releases]
+
+
+
+
 

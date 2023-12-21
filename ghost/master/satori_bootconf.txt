@@ -1,0 +1,15 @@
+＃ 辞書をUTF-8で読み込む。
+is_utf8_dic,true
+
+＃ replace/replace_afterをUTF-8で読み込む。
+is_utf8_replace,true
+
+＃ セーブデータをUTF-8で読み込む。
+is_utf8_savedata,true
+
+＃ characters.iniをUTF-8で読み込む。
+＃is_utf8_charactersini,true
+
+
+＃全部
+＃is_utf8_all,true

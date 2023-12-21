@@ -1,0 +1,32 @@
+
+欲しい項目は
+言いたいことを送信する
+
+
+
+
+
+
+
+＃{{{
+＃＃ お便りを送信する。---------------------------------------------
+＃ R0 ： 入力テキスト
+＃：\![open,inputbox,OnLetter,-1]
+＊OnLetter
+：\![execute,http-POST,https://script.google.com/macros/s/AKfycbyl9vCPjO3SEBFP6O9k80ZfAqahxzdahepDgKHsUCVZoA68RyNdlWRWAMBPYnve_6TepA/exec,--param=message_body="Eve;（USER_ID）;（erase,（R0）,"）"]
+送信しました。
+
+＊メールを送る
+：メッセージを送ることができます。
+送ったメッセージはゴーストのトークに役立てられます。
+\![open,inputbox,OnLetter,-1]
+＃}}}
+
+
+
+
+
+
+＊MENU
+：
+＿メールを送る
